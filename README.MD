@@ -1,5 +1,7 @@
 # KinoPoisk (white listed) Jellyfin plugin
 
+This fork adds support for Jellyfin 12.1. It retains the original project's history and credits [MiklinMA](https://github.com/MiklinMA/jellyfin-kinopoisk-white).
+
 ## About
 
 This plugin for [jellyfin media center](https://jellyfin.org) fetches metadata from [Kinopoisk](https://www.kinopoisk.ru/).
@@ -11,7 +13,7 @@ In difference of [kinopoisk unofficial plugin](https://github.com/LinFor/jellyfi
 ### Automatic
 
 1. Navigate to Settings -> Admin Dashboard -> Plugins -> Repositories
-1. Add a new repository with a Repository URL of `https://raw.githubusercontent.com/MiklinMA/jellyfin-kinopoisk-white/refs/heads/master/manifest.json`. The name can be anything you like (such as `KinoPoisk`).
+1. Add a new repository with a Repository URL of `https://raw.githubusercontent.com/Rewentes/jellyfin-kinopoisk-white/refs/heads/master/manifest.json`. The name can be anything you like (such as `KinoPoisk`).
 1. Save and navigate to Catalogue.
 1. `Кинопоиск (белый список)` should be present. Click on it and install the latest version.
 
@@ -19,7 +21,7 @@ In difference of [kinopoisk unofficial plugin](https://github.com/LinFor/jellyfi
 
 [See the official Jellyfin documentation for install instructions](https://jellyfin.org/docs/general/server/plugins/index.html#installing).
 
-1. Download a version from the [releases tab](https://github.com/MiklinMA/jellyfin-kinopoisk-white/releases) that matches your Jellyfin version.
+1. Download a version from the [releases tab](https://github.com/Rewentes/jellyfin-kinopoisk-white/releases) that matches your Jellyfin version.
 1. Create a directory KinopoiskWhite inside jellyfin plugins directory.
 1. Copy KinopoiskWhite.dll file into created directory.
 1. Restart Jellyfin instance.
@@ -27,10 +29,10 @@ In difference of [kinopoisk unofficial plugin](https://github.com/LinFor/jellyfi
 
 ## Development
 
-1. Use dotnet v9.0
-1. Install dependencies (online)
-1. Build
-1. Copy KinopoiskWhite.dll from bin/Debug/net9.0 to KinopoiskWhite subdir in your jellyfin plugins directory.
+1. Use the .NET 10 SDK.
+1. Run `dotnet test jellyfin-kinopoisk-white.sln` to restore dependencies and run the tests.
+1. Run `dotnet build KinopoiskWhite/Plugin.csproj -c Release`.
+1. Copy `KinopoiskWhite/bin/Release/net10.0/KinopoiskWhite.dll` to a KinopoiskWhite subdirectory in your Jellyfin plugins directory.
 1. Restart jellyfin
 
 ## API
